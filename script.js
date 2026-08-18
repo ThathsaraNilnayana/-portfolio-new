@@ -254,8 +254,8 @@ function showNotification(message, type = 'success') {
         padding: '1rem 1.5rem',
         borderRadius: '12px',
         background: type === 'success'
-            ? 'linear-gradient(135deg, rgba(52, 211, 153, 0.9), rgba(16, 185, 129, 0.9))'
-            : 'linear-gradient(135deg, rgba(234, 179, 8, 0.9), rgba(244, 63, 94, 0.9))',
+            ? 'linear-gradient(135deg, rgba(201, 162, 39, 0.9), rgba(201, 162, 39, 0.9))'
+            : 'linear-gradient(135deg, rgba(184, 134, 11, 0.9), rgba(244, 63, 94, 0.9))',
         color: 'white',
         fontSize: '0.9rem',
         fontWeight: '600',
@@ -468,7 +468,7 @@ const blogDetails = {
         ],
         skills: ['Object-Oriented Programming', 'Full-Stack Web Development', 'Database Design', 'System Architecture', 'Software Engineering', 'Cybersecurity', 'Problem-Solving'],
         tags: ['Programming', 'Software Development', 'Web Design', 'Database Management', 'System Design'],
-        accentColor: '#2dd4bf'
+        accentColor: '#d4af37'
     },
     math: {
         category: 'Mathematics',
@@ -483,7 +483,7 @@ const blogDetails = {
         ],
         skills: ['Mathematical Modeling', 'Linear Algebra', 'Computational Methods', 'Data Analysis', 'Optimization', 'Algorithm Design', 'Problem-Solving'],
         tags: ['Mathematics', 'Data Analysis', 'Optimization', 'Computational Methods', 'MATLAB', 'Algorithms'],
-        accentColor: '#6ee7b7'
+        accentColor: '#e8cf82'
     },
     stats: {
         category: 'Statistics',
@@ -498,7 +498,7 @@ const blogDetails = {
         ],
         skills: ['Data Analysis', 'Statistical Modeling', 'Probability Theory', 'Regression Analysis', 'Hypothesis Testing', 'Python/R Programming', 'Data Visualization', 'Machine Learning Fundamentals'],
         tags: ['Statistics', 'Data Science', 'Data Analysis', 'Python', 'Machine Learning', 'Probability', 'Experimental Design'],
-        accentColor: '#5eead4'
+        accentColor: '#f0e6d2'
     }
 };
 
@@ -523,8 +523,8 @@ function initBlogModal() {
 
     // Color palettes for modal particles
     const particleColors = [
-        '#2dd4bf', '#5eead4', '#99f6e4', '#34d399', '#fbbf24',
-        '#6ee7b7', '#ca8a04', '#14b8a6'
+        '#d4af37', '#f0e6d2', '#f0e6d2', '#c9a227', '#e6b422',
+        '#e8cf82', '#8b6914', '#c9a227'
     ];
 
     function spawnModalParticles(accentColor) {
@@ -593,7 +593,7 @@ function initBlogModal() {
         delay += step;
 
         // 4. Spawn header particles
-        setTimeout(() => spawnModalParticles(data.accentColor || '#2dd4bf'), delay);
+        setTimeout(() => spawnModalParticles(data.accentColor || '#d4af37'), delay);
 
         // 5. Body paragraphs - cascade one by one
         const paragraphs = modalBody.querySelectorAll('p');
