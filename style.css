@@ -472,38 +472,30 @@ ul {
     overflow: hidden;
     display: flex;
     align-items: center;
+    justify-content: center;
     padding-top: 80px;
-    background: var(--bg-primary);
-}
-
-/* Full-bleed editorial cover photo */
-.hero-cover-media {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-}
-
-.hero-cover-photo {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center 15%;
-    filter: grayscale(35%) contrast(1.05);
-}
-
-.hero-cover-overlay {
-    position: absolute;
-    inset: 0;
     background:
-        linear-gradient(90deg, var(--bg-primary) 0%, rgba(10, 10, 10, 0.94) 30%, rgba(10, 10, 10, 0.55) 58%, rgba(10, 10, 10, 0.2) 100%),
-        linear-gradient(to top, var(--bg-primary) 0%, transparent 22%);
+        radial-gradient(ellipse 900px 600px at 50% 30%, rgba(212, 175, 55, 0.08), transparent 70%),
+        var(--bg-primary);
+}
+
+/* Cover-page frame */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    inset: 28px;
+    border: 1px solid rgba(212, 175, 55, 0.18);
+    pointer-events: none;
+    z-index: 0;
 }
 
 .hero-cover-content {
     position: relative;
     z-index: 1;
-    max-width: 640px;
-    padding: 0 2rem 0 clamp(2rem, 6vw, 6rem);
+    max-width: 780px;
+    text-align: center;
+    padding: 0 2rem;
+    margin: 0 auto;
 }
 
 .hero-badge {
@@ -588,13 +580,14 @@ ul {
     font-size: 1.05rem;
     color: var(--text-secondary);
     max-width: 550px;
-    margin-bottom: 2rem;
+    margin: 0 auto 2rem;
     line-height: 1.8;
     animation: slide-up 0.6s ease-out 0.3s both;
 }
 
 .hero-buttons {
     display: flex;
+    justify-content: center;
     gap: 1rem;
     margin-bottom: 3rem;
     animation: slide-up 0.6s ease-out 0.4s both;
@@ -602,6 +595,7 @@ ul {
 
 .hero-stats {
     display: flex;
+    justify-content: center;
     align-items: center;
     gap: 2rem;
     padding-top: 1.75rem;
@@ -2161,30 +2155,6 @@ ul {
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 1024px) {
-    .hero-cover-content {
-        max-width: 100%;
-        text-align: center;
-        padding: 0 1.5rem;
-        margin: 0 auto;
-    }
-
-    .hero-cover-overlay {
-        background:
-            linear-gradient(to top, var(--bg-primary) 0%, rgba(10, 10, 10, 0.75) 45%, rgba(10, 10, 10, 0.3) 100%);
-    }
-
-    .hero-description {
-        margin: 0 auto 2rem;
-    }
-
-    .hero-buttons {
-        justify-content: center;
-    }
-
-    .hero-stats {
-        justify-content: center;
-    }
-
     .about-grid {
         grid-template-columns: 1fr;
         gap: 2rem;
@@ -2303,6 +2273,10 @@ ul {
 }
 
 @media (max-width: 480px) {
+    .hero-section::before {
+        inset: 14px;
+    }
+
     .hero-stats {
         flex-direction: column;
         gap: 1rem;
