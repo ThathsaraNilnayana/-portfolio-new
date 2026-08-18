@@ -356,17 +356,6 @@ rippleStyle.textContent = `
 `;
 document.head.appendChild(rippleStyle);
 
-// ===== PARALLAX EFFECT ON HERO ORBS =====
-window.addEventListener('scroll', () => {
-    const scrolled = window.scrollY;
-    const orbs = document.querySelectorAll('.orb');
-
-    orbs.forEach((orb, i) => {
-        const speed = (i + 1) * 0.15;
-        orb.style.transform = `translateY(${scrolled * speed}px)`;
-    });
-});
-
 // ===== TEXT SCRAMBLE ON HOVER (Nav Logo) =====
 const navLogo = document.querySelector('.nav-logo');
 if (navLogo) {
