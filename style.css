@@ -740,6 +740,28 @@ ul {
     position: relative;
 }
 
+/* HUD targeting-reticle corner brackets */
+.hud-corner {
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    z-index: 2;
+    pointer-events: none;
+    border: 2px solid var(--accent-primary);
+    filter: drop-shadow(0 0 6px rgba(56, 189, 248, 0.6));
+    animation: hud-corner-pulse 3s ease-in-out infinite;
+}
+
+.corner-tl { top: -8px; left: -8px; border-right: none; border-bottom: none; }
+.corner-tr { top: -8px; right: -8px; border-left: none; border-bottom: none; animation-delay: 0.5s; }
+.corner-bl { bottom: -8px; left: -8px; border-right: none; border-top: none; animation-delay: 1s; }
+.corner-br { bottom: -8px; right: -8px; border-left: none; border-top: none; animation-delay: 1.5s; }
+
+@keyframes hud-corner-pulse {
+    0%, 100% { border-color: var(--accent-primary); opacity: 0.7; }
+    50% { border-color: var(--accent-emerald); opacity: 1; }
+}
+
 .about-image {
     width: 100%;
     aspect-ratio: 4/5;
@@ -757,6 +779,28 @@ ul {
     object-fit: cover;
     object-position: center 15%;
     filter: grayscale(20%);
+}
+
+/* Mechanical scan sweep over the photo */
+.about-image-scan {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 40%;
+    background: linear-gradient(to bottom,
+        transparent,
+        rgba(56, 189, 248, 0.25) 45%,
+        rgba(249, 115, 22, 0.2) 55%,
+        transparent);
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
+    pointer-events: none;
+    animation: about-scan-sweep 4s ease-in-out infinite;
+}
+
+@keyframes about-scan-sweep {
+    0% { top: -40%; }
+    50% { top: 100%; }
+    100% { top: -40%; }
 }
 
 .about-experience-badge {
