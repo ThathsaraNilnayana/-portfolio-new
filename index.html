@@ -27,6 +27,7 @@
                 <span class="logo-first">Thathsara</span> <span class="logo-last">Nilnayana</span>
             </a>
             <ul class="nav-links" id="navLinks">
+                <span class="nav-indicator" id="navIndicator"></span>
                 <li><a href="#home" class="nav-link active">Home</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#education" class="nav-link">Education</a></li>
@@ -43,8 +44,18 @@
         </div>
     </nav>
 
+    <!-- ===== CUSTOM HUD CURSOR ===== -->
+    <div class="cursor-ring" id="cursorRing">
+        <span class="cursor-tick tick-t"></span>
+        <span class="cursor-tick tick-r"></span>
+        <span class="cursor-tick tick-b"></span>
+        <span class="cursor-tick tick-l"></span>
+    </div>
+    <div class="cursor-dot" id="cursorDot"></div>
+
     <!-- ===== HERO / COVER SECTION ===== -->
     <section id="home" class="hero-section">
+        <div class="hero-mouse-glow" id="heroGlow"></div>
         <div class="hero-cover-content">
             <div class="hero-badge animate-on-scroll">
                 <span class="badge-dot"></span>
@@ -74,7 +85,7 @@
             </div>
             <div class="hero-stats animate-on-scroll">
                 <div class="stat-item">
-                    <span class="stat-number" data-count="3">0</span><span class="stat-plus">+</span>
+                    <span class="stat-number" data-count="4">0</span><span class="stat-plus">+</span>
                     <span class="stat-label">Projects</span>
                 </div>
                 <div class="stat-divider"></div>
@@ -372,6 +383,8 @@
                     </h3>
                     <div class="tools-grid">
                         <div class="tool-tag"><i class="fas fa-brain"></i> AI/Deep Learning</div>
+                        <div class="tool-tag"><i class="fas fa-network-wired"></i> Neural Networks (SGD/BCE)</div>
+                        <div class="tool-tag"><i class="fas fa-chart-area"></i> R Shiny & Plotly</div>
                         <div class="tool-tag"><i class="fas fa-chart-line"></i> Regression Analysis</div>
                         <div class="tool-tag"><i class="fas fa-wave-square"></i> Time-Series Analysis</div>
                         <div class="tool-tag"><i class="fab fa-git-alt"></i> Git/GitHub</div>
@@ -392,6 +405,72 @@
                 <div class="section-line"></div>
             </div>
             <div class="projects-grid">
+                <!-- Featured Project: Neural Network Learning Lab -->
+                <div class="project-card animate-on-scroll featured-project-card">
+                    <div class="project-image project-image-figure">
+                        <img src="assets/neural-network/network_architecture.png" alt="3-5-4-2 Neural Network Architecture" class="project-card-thumb">
+                        <div class="project-overlay">
+                            <span class="project-status completed">
+                                <i class="fas fa-check-double"></i> Completed &bull; 100/100 Marks
+                            </span>
+                        </div>
+                        <div class="project-badge-corner">
+                            <i class="fas fa-brain"></i> Deep Learning
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-header-meta">
+                            <span class="project-category-tag"><i class="fas fa-microchip"></i> Multi-Label Industrial AI</span>
+                            <span class="project-academic-tag"><i class="fas fa-university"></i> Rajarata University of Sri Lanka</span>
+                        </div>
+                        <h3>Neural Network Learning Lab — Multi-Label Industrial AI Dashboard</h3>
+                        <p>Constructed an interactive condition-monitoring dashboard and a <strong>3-5-4-2 feedforward neural network</strong> from mathematical first principles. Solved multi-label industrial alert prediction (<strong>Overheat</strong> &amp; <strong>Fault</strong>) from continuous temperature, vibration, and pressure telemetry using dual independent sigmoid outputs with Binary Cross-Entropy (BCE) loss.</p>
+                        <div class="project-features">
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span><strong>3-5-4-2 Architecture:</strong> Exact weight matrices (3&times;5, 5&times;4, 4&times;2) &amp; bias vectors</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span><strong>Multi-Label Formulation:</strong> Proved why Softmax fails and uncoupled dual Sigmoids are required</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span><strong>Leakage-Free Pipeline:</strong> Reproducible 70/15/15 split (Seed 42) with train-only standardization</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span><strong>Empirical Suite:</strong> 8 controlled experiments analyzing LR (0.001–0.1), ReLU vs Sigmoid vanishing gradients, &amp; epochs</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span><strong>Dual Dashboard:</strong> Interactive R Shiny &amp; Streamlit applications with Plotly, live parameter tuning, &amp; sample inspector</span>
+                            </div>
+                        </div>
+                        <div class="project-tags">
+                            <span>Neural Networks</span>
+                            <span>Deep Learning</span>
+                            <span>R Shiny</span>
+                            <span>Python / Streamlit</span>
+                            <span>SGD Optimizer</span>
+                            <span>Binary Cross-Entropy</span>
+                            <span>Plotly</span>
+                            <span>Condition Monitoring</span>
+                        </div>
+                        <div class="project-links">
+                            <button type="button" class="btn btn-primary btn-sm" id="openNNModalBtn">
+                                <i class="fas fa-microscope"></i> View Full Details &amp; Case Study
+                            </button>
+                            <a href="assets/neural-network/Neural_Network_Learning_Lab_Report.pdf" target="_blank" class="btn btn-sm">
+                                <i class="fas fa-file-pdf"></i> Technical Report (PDF)
+                            </a>
+                            <a href="assets/neural-network/app.R" download class="btn btn-sm btn-ghost">
+                                <i class="fas fa-code"></i> R Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Project 1 -->
                 <div class="project-card animate-on-scroll">
                     <div class="project-image">
@@ -888,6 +967,552 @@
                     <div class="blog-modal-tags" id="blogModalTags">
                         <!-- tags populated by JS -->
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== PROJECT DEEP-DIVE MODAL: NEURAL NETWORK LEARNING LAB ===== -->
+    <div id="projectModal" class="project-modal" aria-hidden="true">
+        <div class="project-modal-overlay" id="projectModalOverlay"></div>
+        <div class="project-modal-content">
+            <button class="project-modal-close" id="projectModalClose" aria-label="Close project modal">
+                <i class="fas fa-times"></i>
+            </button>
+
+            <!-- Modal Header -->
+            <div class="project-modal-header">
+                <div class="p-header-top">
+                    <span class="p-badge"><i class="fas fa-brain"></i> Deep Learning &amp; Multi-Label Classification</span>
+                    <span class="p-score-badge"><i class="fas fa-award"></i> Grade: 100/100 Marks</span>
+                </div>
+                <h2 class="project-modal-title">Neural Network Learning Lab — Multi-Label Industrial AI Dashboard</h2>
+                <p class="project-modal-subtitle">Practical Application Development, Interactive Architecture &amp; Controlled Empirical Analysis</p>
+                <div class="p-meta-chips">
+                    <span class="p-chip"><i class="fas fa-network-wired"></i> 3 &rarr; 5 &rarr; 4 &rarr; 2 Topology</span>
+                    <span class="p-chip"><i class="fas fa-bolt"></i> Optimizer: SGD (&alpha; = 0.001 – 0.1)</span>
+                    <span class="p-chip"><i class="fas fa-chart-line"></i> Loss: Binary Cross-Entropy</span>
+                    <span class="p-chip"><i class="fas fa-sliders-h"></i> ReLU &amp; Sigmoid Activations</span>
+                    <span class="p-chip"><i class="fas fa-database"></i> 180 Industrial Observations</span>
+                    <span class="p-chip"><i class="fas fa-laptop-code"></i> R Shiny &amp; Streamlit</span>
+                </div>
+            </div>
+
+            <!-- Modal Tab Navigation -->
+            <div class="p-tabs-nav" role="tablist">
+                <button class="p-tab active" data-tab="tab-overview" role="tab" aria-selected="true">
+                    <i class="fas fa-project-diagram"></i> Architecture &amp; Overview
+                </button>
+                <button class="p-tab" data-tab="tab-math" role="tab" aria-selected="false">
+                    <i class="fas fa-calculator"></i> Math &amp; Forward Trace
+                </button>
+                <button class="p-tab" data-tab="tab-experiments" role="tab" aria-selected="false">
+                    <i class="fas fa-flask"></i> Controlled Experiments
+                </button>
+                <button class="p-tab" data-tab="tab-data" role="tab" aria-selected="false">
+                    <i class="fas fa-filter"></i> Data &amp; Preprocessing
+                </button>
+                <button class="p-tab" data-tab="tab-app" role="tab" aria-selected="false">
+                    <i class="fas fa-desktop"></i> Dashboard &amp; Downloads
+                </button>
+            </div>
+
+            <!-- Tab 1: Architecture & Overview -->
+            <div class="p-tab-pane active" id="tab-overview" role="tabpanel">
+                <div class="p-card-grid">
+                    <div class="p-callout-card">
+                        <div class="p-callout-icon"><i class="fas fa-industry"></i></div>
+                        <div>
+                            <h4>Industrial Problem Scenario</h4>
+                            <p>Models an industrial condition-monitoring environment where factory machinery logs three continuous sensor signals: <strong>Temperature (&deg;C)</strong> ($x_1$), <strong>Vibration (mm/s)</strong> ($x_2$), and <strong>Pressure (kPa)</strong> ($x_3$). The network simultaneously predicts two independent warning indicators: <code>overheat_alert</code> and <code>fault_alert</code>.</p>
+                        </div>
+                    </div>
+
+                    <div class="p-callout-card accent-orange">
+                        <div class="p-callout-icon"><i class="fas fa-lightbulb"></i></div>
+                        <div>
+                            <h4>Crucial Finding: Why Multi-Label (Dual Sigmoids) vs Softmax?</h4>
+                            <p>In real machinery, overheating and mechanical faults are physically distinct, independent failure modes. Across 180 observations, all permutations exist: <strong>(0,0)=96</strong>, <strong>(1,0)=27</strong>, <strong>(0,1)=25</strong>, and <strong>(1,1)=32 simultaneous double alerts</strong>. Softmax computes a normalized distribution ($\sum p_k = 1.0$), falsely assuming mutual exclusivity (meaning rising temperature would artificially depress fault probability!). Two independent sigmoid neurons with Binary Cross-Entropy (BCE) loss allow both alerts to trigger concurrently.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-figure-container">
+                    <div class="p-figure-header">
+                        <span><i class="fas fa-image"></i> Figure: Fully Connected 3-5-4-2 Feedforward Topology</span>
+                        <a href="assets/neural-network/network_architecture.png" target="_blank" class="p-figure-link"><i class="fas fa-external-link-alt"></i> Full View</a>
+                    </div>
+                    <img src="assets/neural-network/network_architecture.png" alt="3-5-4-2 Neural Network Topology" class="p-figure-img">
+                    <p class="p-figure-caption">Visual representation of the 3-5-4-2 network showing layer connectivity, weight matrices ($3\times5$, $5\times4$, $4\times2$), and bias vectors.</p>
+                </div>
+
+                <div class="p-spec-grid">
+                    <div class="p-spec-item">
+                        <span class="p-spec-label">Input Layer</span>
+                        <span class="p-spec-val">3 Continuous Sensor Units ($x_1, x_2, x_3$)</span>
+                    </div>
+                    <div class="p-spec-item">
+                        <span class="p-spec-label">Hidden Layer 1</span>
+                        <span class="p-spec-val">5 Neurons (ReLU / Sigmoid switchable)</span>
+                    </div>
+                    <div class="p-spec-item">
+                        <span class="p-spec-label">Hidden Layer 2</span>
+                        <span class="p-spec-val">4 Neurons (ReLU / Sigmoid switchable)</span>
+                    </div>
+                    <div class="p-spec-item">
+                        <span class="p-spec-label">Output Layer</span>
+                        <span class="p-spec-val">2 Independent Sigmoids ($\hat{y}_1, \hat{y}_2 \in (0, 1)$)</span>
+                    </div>
+                    <div class="p-spec-item">
+                        <span class="p-spec-label">Optimization</span>
+                        <span class="p-spec-val">Stochastic Gradient Descent (SGD)</span>
+                    </div>
+                    <div class="p-spec-item">
+                        <span class="p-spec-label">Loss Function</span>
+                        <span class="p-spec-val">Multi-Label Binary Cross-Entropy (BCE)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab 2: Math & Forward Trace -->
+            <div class="p-tab-pane" id="tab-math" role="tabpanel">
+                <div class="p-section-heading">
+                    <h3><i class="fas fa-square-root-alt"></i> Mathematical Formulation</h3>
+                    <p>Forward propagation computed from mathematical first principles across weight matrices and bias offsets:</p>
+                </div>
+
+                <div class="p-formula-cards">
+                    <div class="p-formula-card">
+                        <div class="p-formula-title">Layer 1 (Hidden 1)</div>
+                        <div class="p-formula-code">Z<sup>(1)</sup> = X &middot; W<sup>(1)</sup> + b<sup>(1)</sup>, &nbsp; A<sup>(1)</sup> = g(Z<sup>(1)</sup>)</div>
+                        <div class="p-formula-dim">W<sup>(1)</sup> &isin; &reals;<sup>3&times;5</sup>, &nbsp; b<sup>(1)</sup> &isin; &reals;<sup>5</sup>, &nbsp; g &isin; {ReLU, Sigmoid}</div>
+                    </div>
+                    <div class="p-formula-card">
+                        <div class="p-formula-title">Layer 2 (Hidden 2)</div>
+                        <div class="p-formula-code">Z<sup>(2)</sup> = A<sup>(1)</sup> &middot; W<sup>(2)</sup> + b<sup>(2)</sup>, &nbsp; A<sup>(2)</sup> = g(Z<sup>(2)</sup>)</div>
+                        <div class="p-formula-dim">W<sup>(2)</sup> &isin; &reals;<sup>5&times;4</sup>, &nbsp; b<sup>(2)</sup> &isin; &reals;<sup>4</sup>, &nbsp; g &isin; {ReLU, Sigmoid}</div>
+                    </div>
+                    <div class="p-formula-card">
+                        <div class="p-formula-title">Layer 3 (Output Layer)</div>
+                        <div class="p-formula-code">Z<sup>(3)</sup> = A<sup>(2)</sup> &middot; W<sup>(3)</sup> + b<sup>(3)</sup>, &nbsp; &Ycirc; = &sigma;(Z<sup>(3)</sup>)</div>
+                        <div class="p-formula-dim">W<sup>(3)</sup> &isin; &reals;<sup>4&times;2</sup>, &nbsp; b<sup>(3)</sup> &isin; &reals;<sup>2</sup>, &nbsp; &sigma;(z) = 1 / (1 + e<sup>-z</sup>)</div>
+                    </div>
+                    <div class="p-formula-card accent">
+                        <div class="p-formula-title">Loss Function (Binary Cross-Entropy)</div>
+                        <div class="p-formula-code">Loss = &minus; (1/m) &sum; [ y<sub>k</sub> ln(&Ycirc;<sub>k</sub>) + (1 &minus; y<sub>k</sub>) ln(1 &minus; &Ycirc;<sub>k</sub>) ]</div>
+                        <div class="p-formula-dim">Parameter updates: &theta; &larr; &theta; &minus; &alpha; &nabla;Loss (SGD)</div>
+                    </div>
+                </div>
+
+                <div class="p-section-heading" style="margin-top: 2rem;">
+                    <h3><i class="fas fa-list-ol"></i> Quantitative Forward Propagation Trace: Observation M003</h3>
+                    <p>Full numerical trace proving complete transparency of weights, biases, activations, and probabilities (Seed 42, LR 0.01, Epochs 100, ReLU):</p>
+                </div>
+
+                <div class="p-trace-meta">
+                    <span class="p-trace-badge"><strong>Raw Inputs:</strong> Temp = 76.1 &deg;C, Vib = 7.34 mm/s, Pres = 92.6 kPa</span>
+                    <span class="p-trace-badge"><strong>True Targets:</strong> overheat_alert = 1, fault_alert = 1</span>
+                    <span class="p-trace-badge"><strong>Standardized:</strong> x<sub>1</sub> = +0.9430, x<sub>2</sub> = +0.9922, x<sub>3</sub> = +0.9281</span>
+                </div>
+
+                <div class="p-table-responsive">
+                    <table class="hud-table">
+                        <thead>
+                            <tr>
+                                <th>Layer</th>
+                                <th>Neuron</th>
+                                <th>Weighted Sum (z)</th>
+                                <th>Activation (a)</th>
+                                <th>Functional Role of Weights, Biases &amp; Activations</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td rowspan="5" class="layer-cell">Hidden 1<br><small>(ReLU)</small></td>
+                                <td><code>H1-1</code></td>
+                                <td class="num-val positive">+0.7830</td>
+                                <td class="num-val positive">+0.7830</td>
+                                <td rowspan="5" class="role-desc">Weights amplify feature interactions (pressure &amp; vibration). Biases shift the excitation threshold. In <code>H1-5</code>, negative pre-activation (-1.4052) is clamped to zero by ReLU, creating a <strong>sparse and robust feature representation</strong>.</td>
+                            </tr>
+                            <tr>
+                                <td><code>H1-2</code></td>
+                                <td class="num-val positive">+0.6745</td>
+                                <td class="num-val positive">+0.6745</td>
+                            </tr>
+                            <tr>
+                                <td><code>H1-3</code></td>
+                                <td class="num-val positive">+2.4330</td>
+                                <td class="num-val positive">+2.4330</td>
+                            </tr>
+                            <tr>
+                                <td><code>H1-4</code></td>
+                                <td class="num-val positive">+2.8038</td>
+                                <td class="num-val positive">+2.8038</td>
+                            </tr>
+                            <tr>
+                                <td><code>H1-5</code></td>
+                                <td class="num-val negative">-1.4052</td>
+                                <td class="num-val zero">0.0000</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="4" class="layer-cell">Hidden 2<br><small>(ReLU)</small></td>
+                                <td><code>H2-1</code></td>
+                                <td class="num-val negative">-8.2113</td>
+                                <td class="num-val zero">0.0000</td>
+                                <td rowspan="4" class="role-desc">Combines Layer 1 features into higher-order patterns. Neurons <code>H2-1</code>, <code>H2-3</code>, and <code>H2-4</code> receive net inhibitory pre-activations, while <code>H2-2</code> acts as the primary excitatory conduit feeding forward.</td>
+                            </tr>
+                            <tr>
+                                <td><code>H2-2</code></td>
+                                <td class="num-val positive">+0.5859</td>
+                                <td class="num-val positive">+0.5859</td>
+                            </tr>
+                            <tr>
+                                <td><code>H2-3</code></td>
+                                <td class="num-val negative">-2.2219</td>
+                                <td class="num-val zero">0.0000</td>
+                            </tr>
+                            <tr>
+                                <td><code>H2-4</code></td>
+                                <td class="num-val negative">-0.4438</td>
+                                <td class="num-val zero">0.0000</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2" class="layer-cell output-cell">Output Layer<br><small>(Sigmoid)</small></td>
+                                <td><code>Overheat</code></td>
+                                <td class="num-val negative">-0.2009</td>
+                                <td class="num-val prob"><strong>0.4499</strong> (0 @ &tau;=0.5)</td>
+                                <td rowspan="2" class="role-desc">Produces uncoupled posterior probabilities $P(\text{Alert}=1|X) = \sigma(z)$. Both predictions map cleanly to calibrated probabilities without artificial normalizer coupling.</td>
+                            </tr>
+                            <tr>
+                                <td><code>Fault</code></td>
+                                <td class="num-val negative">-0.2568</td>
+                                <td class="num-val prob"><strong>0.4362</strong> (0 @ &tau;=0.5)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Tab 3: Controlled Experiments -->
+            <div class="p-tab-pane" id="tab-experiments" role="tabpanel">
+                <div class="p-section-heading">
+                    <h3><i class="fas fa-chart-bar"></i> Controlled Empirical Experiments (8 Recorded Configurations)</h3>
+                    <p>Identical initial weights and reproducible train/val splits (Seed 42) across 3 experimental suites:</p>
+                </div>
+
+                <div class="p-table-responsive">
+                    <table class="hud-table exp-table">
+                        <thead>
+                            <tr>
+                                <th>Experimental Suite</th>
+                                <th>Configuration</th>
+                                <th>LR (&alpha;)</th>
+                                <th>Epochs</th>
+                                <th>Act</th>
+                                <th>Final Train Loss</th>
+                                <th>Final Val Loss</th>
+                                <th>Best Val Loss (Ep)</th>
+                                <th>Test Accuracy</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="suite-row">
+                                <td rowspan="3"><strong>1. Learning Rate Dynamics</strong><br><small>(100 Epochs, ReLU)</small></td>
+                                <td>Exp 1: LR = 0.001</td>
+                                <td>0.001</td>
+                                <td>100</td>
+                                <td><span class="badge-tag">ReLU</span></td>
+                                <td>0.7789</td>
+                                <td>0.9462</td>
+                                <td>0.9462 (100)</td>
+                                <td class="acc-val">63.0%</td>
+                            </tr>
+                            <tr class="highlight-row">
+                                <td><strong>Exp 1: LR = 0.010 (Base)</strong></td>
+                                <td>0.010</td>
+                                <td>100</td>
+                                <td><span class="badge-tag">ReLU</span></td>
+                                <td><strong>0.6104</strong></td>
+                                <td><strong>0.5972</strong></td>
+                                <td><strong>0.5972 (100)</strong></td>
+                                <td class="acc-val highlight"><strong>70.4%</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Exp 1: LR = 0.100</td>
+                                <td>0.100</td>
+                                <td>100</td>
+                                <td><span class="badge-tag">ReLU</span></td>
+                                <td>0.5148</td>
+                                <td>0.5047</td>
+                                <td>0.5047 (100)</td>
+                                <td class="acc-val">72.2%</td>
+                            </tr>
+                            <tr class="suite-row">
+                                <td rowspan="2"><strong>2. Activation Functions</strong><br><small>(LR=0.010, 100 Ep)</small></td>
+                                <td>Exp 2: ReLU (Base)</td>
+                                <td>0.010</td>
+                                <td>100</td>
+                                <td><span class="badge-tag">ReLU</span></td>
+                                <td>0.6104</td>
+                                <td>0.5972</td>
+                                <td>0.5972 (100)</td>
+                                <td class="acc-val">70.4%</td>
+                            </tr>
+                            <tr>
+                                <td>Exp 2: Sigmoid</td>
+                                <td>0.010</td>
+                                <td>100</td>
+                                <td><span class="badge-tag purple">Sigmoid</span></td>
+                                <td>0.6776</td>
+                                <td>0.7375</td>
+                                <td>0.7375 (100)</td>
+                                <td class="acc-val">75.9%</td>
+                            </tr>
+                            <tr class="suite-row">
+                                <td rowspan="3"><strong>3. Epoch Duration</strong><br><small>(LR=0.010, ReLU)</small></td>
+                                <td>Exp 3: Epochs = 20</td>
+                                <td>0.010</td>
+                                <td>20</td>
+                                <td><span class="badge-tag">ReLU</span></td>
+                                <td>0.7289</td>
+                                <td>0.8356</td>
+                                <td>0.8356 (20)</td>
+                                <td class="acc-val">61.1%</td>
+                            </tr>
+                            <tr>
+                                <td>Exp 3: Epochs = 100</td>
+                                <td>0.010</td>
+                                <td>100</td>
+                                <td><span class="badge-tag">ReLU</span></td>
+                                <td>0.6104</td>
+                                <td>0.5972</td>
+                                <td>0.5972 (100)</td>
+                                <td class="acc-val">70.4%</td>
+                            </tr>
+                            <tr>
+                                <td>Exp 3: Epochs = 300</td>
+                                <td>0.010</td>
+                                <td>300</td>
+                                <td><span class="badge-tag">ReLU</span></td>
+                                <td>0.5571</td>
+                                <td>0.5485</td>
+                                <td>0.5485 (300)</td>
+                                <td class="acc-val">72.2%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="p-figures-duo">
+                    <div class="p-figure-container">
+                        <div class="p-figure-header">
+                            <span><i class="fas fa-chart-line"></i> Loss Curves (Baseline: LR=0.01, 100 Epochs, ReLU)</span>
+                        </div>
+                        <img src="assets/neural-network/loss_curves.png" alt="Training & Validation BCE Loss Curves" class="p-figure-img">
+                        <p class="p-figure-caption">Loss decreased from 0.7289 to 0.6104 with validation loss tracking at 0.5972 (margin |L_val - L_tr| = 0.0132 confirms healthy generalization).</p>
+                    </div>
+
+                    <div class="p-figure-container">
+                        <div class="p-figure-header">
+                            <span><i class="fas fa-chart-bar"></i> Empirical Comparison Across All 8 Configurations</span>
+                        </div>
+                        <img src="assets/neural-network/experiment_comparison.png" alt="Controlled Experiment Comparison Chart" class="p-figure-img">
+                        <p class="p-figure-caption">Final training vs validation loss for all 8 experiment runs, highlighting learning rate speed and activation vanishing gradients.</p>
+                    </div>
+                </div>
+
+                <!-- Technical Q&A Accordion/Cards -->
+                <div class="p-qa-grid">
+                    <div class="p-qa-card">
+                        <h4><i class="fas fa-question-circle"></i> Learning Rate Dynamics: Does higher LR always mean faster convergence?</h4>
+                        <p><strong>Finding:</strong> No. While increasing LR from 0.001 to 0.1 reduced training loss from 0.7789 to 0.5148 by overcoming underfitting, excessively high learning rates (&alpha; &gt; 0.5) trigger gradient overshoot, oscillation across ravines, and eventual divergence (Loss &rarr; &infin;). Input standardization strictly bounded variance to keep 0.1 stable.</p>
+                    </div>
+                    <div class="p-qa-card">
+                        <h4><i class="fas fa-question-circle"></i> Hidden Activations: Why does ReLU outperform Sigmoid?</h4>
+                        <p><strong>Theoretical Cause:</strong> Sigmoid derivative saturates: &sigma;&prime;(z) = &sigma;(z)(1 &minus; &sigma;(z)) &le; 0.25. Backpropagating through 2 hidden layers attenuates gradients by factors &le; (0.25)<sup>2</sup> = 0.0625 (<strong>vanishing gradient problem</strong>). Early weights freeze. Conversely, ReLU&prime;(z) = 1 for all z &gt; 0, sustaining maximum gradient magnitude and convergence velocity.</p>
+                    </div>
+                    <div class="p-qa-card">
+                        <h4><i class="fas fa-question-circle"></i> Epoch Scaling: Does increasing epochs always improve generalization?</h4>
+                        <p><strong>Finding:</strong> No. Scaling from 20 to 100 epochs reduced validation loss from 0.8356 to 0.5972 (test accuracy jumped from 61.1% to 70.4%). While 300 epochs reached 0.5485, training beyond this threshold risks memorizing noise, evidenced when training loss drops while validation loss turns upward (&Delta;L_val &gt; 0), establishing the need for early stopping.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab 4: Data & Preprocessing -->
+            <div class="p-tab-pane" id="tab-data" role="tabpanel">
+                <div class="p-card-grid">
+                    <div class="p-callout-card">
+                        <div class="p-callout-icon"><i class="fas fa-shield-alt"></i></div>
+                        <div>
+                            <h4>Strict Zero-Leakage Preprocessing Protocol</h4>
+                            <p>To ensure rigorous industrial machine learning standards, standardization parameters (mean &mu; and standard deviation &sigma;) were derived <strong>strictly from the 126 training instances</strong> and applied downstream to validation, test, and live prediction inputs.</p>
+                        </div>
+                    </div>
+                    <div class="p-callout-card accent-blue">
+                        <div class="p-callout-icon"><i class="fas fa-random"></i></div>
+                        <div>
+                            <h4>Reproducible 70% / 15% / 15% Data Split</h4>
+                            <p>Fixed seed (<code>seed = 42</code>) partitioned the 180 records into: <strong>Training: 126 records (70%)</strong>, <strong>Validation: 27 records (15%)</strong>, and <strong>Test: 27 records (15%)</strong>. Identifier <code>machine_id</code> was strictly excluded from features.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-figure-container">
+                    <div class="p-figure-header">
+                        <span><i class="fas fa-chart-area"></i> Feature Distributions &amp; Target Combinations</span>
+                    </div>
+                    <img src="assets/neural-network/feature_distributions.png" alt="Feature Distributions and Target Frequencies" class="p-figure-img">
+                    <p class="p-figure-caption">Distributions of temperature, vibration, and pressure features alongside target label frequencies showing all 4 output permutations.</p>
+                </div>
+
+                <div class="p-section-heading">
+                    <h3><i class="fas fa-table"></i> Training Set Normalization Parameters (Mean &plusmn; SD)</h3>
+                </div>
+                <div class="p-table-responsive">
+                    <table class="hud-table">
+                        <thead>
+                            <tr>
+                                <th>Feature</th>
+                                <th>Physical Meaning</th>
+                                <th>Training Mean (&mu;)</th>
+                                <th>Training Std Dev (&sigma;)</th>
+                                <th>Standardization Formula</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>temperature_c</code></td>
+                                <td>Machine Temperature in &deg;C</td>
+                                <td class="num-val">57.912 &deg;C</td>
+                                <td class="num-val">19.288 &deg;C</td>
+                                <td><code>x_scaled = (x - 57.912) / 19.288</code></td>
+                            </tr>
+                            <tr>
+                                <td><code>vibration_mm_s</code></td>
+                                <td>Vibration Velocity in mm/s</td>
+                                <td class="num-val">4.790 mm/s</td>
+                                <td class="num-val">2.570 mm/s</td>
+                                <td><code>x_scaled = (x - 4.790) / 2.570</code></td>
+                            </tr>
+                            <tr>
+                                <td><code>pressure_kpa</code></td>
+                                <td>Internal Pressure in kPa</td>
+                                <td class="num-val">70.359 kPa</td>
+                                <td class="num-val">23.964 kPa</td>
+                                <td><code>x_scaled = (x - 70.359) / 23.964</code></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Tab 5: Dashboard & Downloads -->
+            <div class="p-tab-pane" id="tab-app" role="tabpanel">
+                <div class="p-section-heading">
+                    <h3><i class="fas fa-desktop"></i> Interactive Application Architecture (R Shiny &amp; Streamlit)</h3>
+                    <p>Designed according to laboratory specification layout fulfilling all 6 dashboard feature panels:</p>
+                </div>
+
+                <div class="p-app-panels-grid">
+                    <div class="p-app-panel-card">
+                        <span class="p-panel-letter">Panel A</span>
+                        <h4>Input Data &amp; Preprocessing</h4>
+                        <p>Dataset preview, 180 records, distribution histograms, target frequencies, and leakage-free standardized split.</p>
+                    </div>
+                    <div class="p-app-panel-card">
+                        <span class="p-panel-letter">Panel B</span>
+                        <h4>Interactive Network Visualizer</h4>
+                        <p>Dynamic 3-5-4-2 topology with connection lines thickened/colored by learned weight magnitude and neuron activation states.</p>
+                    </div>
+                    <div class="p-app-panel-card">
+                        <span class="p-panel-letter">Panel C</span>
+                        <h4>Training Controls</h4>
+                        <p>Functional inputs for Learning Rate (0.001–0.1), Epochs (20–500), ReLU/Sigmoid toggle, and Train/Reset buttons.</p>
+                    </div>
+                    <div class="p-app-panel-card">
+                        <span class="p-panel-letter">Panel D</span>
+                        <h4>Learning &amp; Error Curves</h4>
+                        <p>Actual epoch-wise recorded binary cross-entropy curves for training and validation sets rendered with interactive Plotly.</p>
+                    </div>
+                    <div class="p-app-panel-card">
+                        <span class="p-panel-letter">Panel E</span>
+                        <h4>Live Prediction Sliders</h4>
+                        <p>Manual sliders for Temperature, Vibration, and Pressure generating real-time calibrated posterior probabilities &amp; decisions.</p>
+                    </div>
+                    <div class="p-app-panel-card">
+                        <span class="p-panel-letter">Panel F</span>
+                        <h4>Controlled Experiments</h4>
+                        <p>Automated comparative runs of the 8 experiment configurations with exportable metric comparisons.</p>
+                    </div>
+                </div>
+
+                <div class="p-section-heading" style="margin-top: 2.5rem;">
+                    <h3><i class="fas fa-download"></i> Project Artifacts &amp; Source Deliverables</h3>
+                    <p>Access the complete submitted technical documentation, interactive R Shiny application code, and datasets:</p>
+                </div>
+
+                <div class="p-download-grid">
+                    <div class="p-download-card">
+                        <div class="p-dl-icon red"><i class="fas fa-file-pdf"></i></div>
+                        <div class="p-dl-info">
+                            <h4>Comprehensive Technical Report</h4>
+                            <p>3-page peer-reviewed format PDF covering mathematical formulations, observation trace, empirical tables, and theoretical answers.</p>
+                            <span class="p-dl-size"><i class="fas fa-file"></i> 676 KB &bull; PDF Document</span>
+                        </div>
+                        <div class="p-dl-actions">
+                            <a href="assets/neural-network/Neural_Network_Learning_Lab_Report.pdf" target="_blank" class="btn btn-primary btn-sm">
+                                <i class="fas fa-eye"></i> View PDF
+                            </a>
+                            <a href="assets/neural-network/Neural_Network_Learning_Lab_Report.pdf" download class="btn btn-outline btn-sm">
+                                <i class="fas fa-download"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="p-download-card">
+                        <div class="p-dl-icon blue"><i class="fas fa-code"></i></div>
+                        <div class="p-dl-info">
+                            <h4>R Shiny Application Code (`app.R`)</h4>
+                            <p>Full interactive Shiny dashboard with Plotly visualizer, analytical gradients, weight matrix tracker, and live sensor sliders.</p>
+                            <span class="p-dl-size"><i class="fas fa-file-code"></i> 28.3 KB &bull; R Script</span>
+                        </div>
+                        <div class="p-dl-actions">
+                            <a href="assets/neural-network/app.R" download class="btn btn-primary btn-sm">
+                                <i class="fas fa-download"></i> Download Code
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="p-download-card">
+                        <div class="p-dl-icon emerald"><i class="fas fa-table"></i></div>
+                        <div class="p-dl-info">
+                            <h4>Industrial Sensor Dataset</h4>
+                            <p>180 machine observations with temperature, vibration, pressure readings and multi-label warning targets.</p>
+                            <span class="p-dl-size"><i class="fas fa-database"></i> 4.6 KB &bull; CSV Dataset</span>
+                        </div>
+                        <div class="p-dl-actions">
+                            <a href="assets/neural-network/sensor_dataset.csv" download class="btn btn-primary btn-sm">
+                                <i class="fas fa-download"></i> Download CSV
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal Footer -->
+            <div class="project-modal-footer">
+                <div class="p-footer-tags">
+                    <span><i class="fas fa-tag"></i> Feedforward Neural Network</span>
+                    <span><i class="fas fa-tag"></i> Multi-Label Classification</span>
+                    <span><i class="fas fa-tag"></i> SGD Optimization</span>
+                    <span><i class="fas fa-tag"></i> R Shiny &amp; Plotly</span>
+                    <span><i class="fas fa-tag"></i> Leakage-Free Preprocessing</span>
+                    <span><i class="fas fa-tag"></i> Industrial IoT</span>
+                </div>
+                <div class="p-footer-action">
+                    <a href="assets/neural-network/Neural_Network_Learning_Lab_Report.pdf" target="_blank" class="btn btn-primary btn-sm">
+                        <i class="fas fa-file-pdf"></i> Read Full 3-Page Report
+                    </a>
                 </div>
             </div>
         </div>
