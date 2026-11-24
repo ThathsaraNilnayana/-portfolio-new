@@ -2887,80 +2887,22 @@ body::after {
     }
 }
 
-/* ===== CUSTOM HUD CURSOR ===== */
-@media (hover: hover) and (pointer: fine) {
-    html, body {
-        cursor: none;
-    }
+/* ===== PROFESSIONAL ARROW CURSOR ===== */
+html, body {
+    cursor: default;
+}
 
-    a, button, input, textarea, .btn, .nav-link, .nav-toggle,
-    .project-card, .cert-card, .leadership-card, .blog-card,
-    .skill-bar-item, .pro-skill-card, .tool-tag, .back-to-top,
-    .typewriter, .blog-modal-close, .project-modal-close, .p-tab,
-    .p-download-card, .btn-copy-clone, .social-link {
-        cursor: none;
-    }
+/* Interactive elements get the professional pointer */
+a, button, input[type="submit"], input[type="button"], .btn, .nav-link, .nav-toggle,
+.project-card, .cert-card, .leadership-card, .blog-card,
+.skill-bar-item, .pro-skill-card, .tool-tag, .back-to-top,
+.blog-modal-close, .project-modal-close, .p-tab,
+.p-download-card, .btn-copy-clone, .social-link, [role="button"], [role="tab"], .project-inline-link {
+    cursor: pointer;
+}
 
-    .cursor-dot,
-    .cursor-ring {
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: 10001;
-        pointer-events: none;
-        transform: translate(-50%, -50%);
-        opacity: 0;
-        border-radius: 50%;
-    }
-
-    /* Core accent dot */
-    .cursor-dot {
-        width: 6px;
-        height: 6px;
-        background: #38bdf8;
-        box-shadow: 0 0 10px rgba(56, 189, 248, 0.65);
-        transition: opacity 0.25s ease, background 0.25s ease, box-shadow 0.25s ease, width 0.25s ease, height 0.25s ease, transform 0.2s ease;
-    }
-
-    /* Trailing follower circle */
-    .cursor-ring {
-        width: 32px;
-        height: 32px;
-        border: 1.5px solid rgba(56, 189, 248, 0.45);
-        background: rgba(56, 189, 248, 0.02);
-        box-shadow: 0 0 15px rgba(56, 189, 248, 0.08);
-        transition: opacity 0.25s ease, width 0.28s cubic-bezier(0.25, 1, 0.5, 1),
-            height 0.28s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
-    }
-
-    .cursor-dot.active,
-    .cursor-ring.active {
-        opacity: 1;
-    }
-
-    /* Hover state over links, cards, tabs, and buttons */
-    .cursor-ring.cursor-hover {
-        width: 48px;
-        height: 48px;
-        border-color: rgba(56, 189, 248, 0.85);
-        background: rgba(56, 189, 248, 0.12);
-        box-shadow: 0 0 25px rgba(56, 189, 248, 0.25);
-    }
-
-    .cursor-dot.cursor-hover {
-        width: 4px;
-        height: 4px;
-        background: #ffffff;
-        box-shadow: 0 0 12px rgba(255, 255, 255, 0.85);
-    }
-
-    /* Crisp click feedback */
-    .cursor-ring.cursor-click {
-        width: 24px;
-        height: 24px;
-        border-color: #38bdf8;
-        background: rgba(56, 189, 248, 0.25);
-    }
+input[type="text"], input[type="email"], textarea {
+    cursor: text;
 }
 
 /* ===== HERO MOUSE-REACTIVE HUD GLOW ===== */
