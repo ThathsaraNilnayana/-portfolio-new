@@ -496,7 +496,7 @@ window.addEventListener('scroll', () => {
     // Hover state over interactive elements
     const hoverTargets = 'a, button, input, textarea, .btn, .nav-link, .nav-toggle, ' +
         '.project-card, .cert-card, .leadership-card, .blog-card, .skill-bar-item, ' +
-        '.pro-skill-card, .tool-tag, .back-to-top, .typewriter, .blog-modal-close, .project-modal-close, .p-tab, .p-download-card, .social-link';
+        '.pro-skill-card, .tool-tag, .back-to-top, .typewriter, .blog-modal-close, .project-modal-close, .p-tab, .p-download-card, .btn-copy-clone, .social-link';
 
     document.addEventListener('mouseover', (e) => {
         if (e.target.closest(hoverTargets)) {
@@ -868,6 +868,28 @@ function initProjectModal() {
 
     if (closeBtn) closeBtn.addEventListener('click', closeModal);
     if (overlay) overlay.addEventListener('click', closeModal);
+
+    // Copy clone command
+    const copyBtn = document.getElementById('btnCopyClone');
+    if (copyBtn) {
+        copyBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const cloneCmd = document.getElementById('cloneCmd');
+            if (cloneCmd) {
+                const text = cloneCmd.textContent.trim();
+                navigator.clipboard.writeText(text).then(() => {
+                    const span = copyBtn.querySelector('span');
+                    const orig = span ? span.textContent : 'Copy';
+                    if (span) span.textContent = 'Copied!';
+                    copyBtn.classList.add('copied');
+                    setTimeout(() => {
+                        if (span) span.textContent = orig;
+                        copyBtn.classList.remove('copied');
+                    }, 2000);
+                });
+            }
+        });
+    }
 
     // ESC Key to close
     window.addEventListener('keydown', (e) => {

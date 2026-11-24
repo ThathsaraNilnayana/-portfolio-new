@@ -2883,7 +2883,8 @@ body::after {
     a, button, input, textarea, .btn, .nav-link, .nav-toggle,
     .project-card, .cert-card, .leadership-card, .blog-card,
     .skill-bar-item, .pro-skill-card, .tool-tag, .back-to-top,
-    .typewriter, .blog-modal-close, .social-link {
+    .typewriter, .blog-modal-close, .project-modal-close, .p-tab,
+    .p-download-card, .btn-copy-clone, .social-link {
         cursor: none;
     }
 
@@ -2896,24 +2897,27 @@ body::after {
         pointer-events: none;
         transform: translate(-50%, -50%);
         opacity: 0;
+        border-radius: 50%;
     }
 
+    /* Core accent dot */
     .cursor-dot {
         width: 6px;
         height: 6px;
-        border-radius: 50%;
-        background: var(--accent-primary);
-        box-shadow: 0 0 8px var(--accent-primary), 0 0 16px rgba(56, 189, 248, 0.5);
-        transition: opacity 0.25s ease, background 0.25s ease, box-shadow 0.25s ease, width 0.2s ease, height 0.2s ease;
+        background: #38bdf8;
+        box-shadow: 0 0 10px rgba(56, 189, 248, 0.65);
+        transition: opacity 0.25s ease, background 0.25s ease, box-shadow 0.25s ease, width 0.25s ease, height 0.25s ease, transform 0.2s ease;
     }
 
+    /* Trailing follower circle */
     .cursor-ring {
-        width: 34px;
-        height: 34px;
-        border: 1.5px solid rgba(56, 189, 248, 0.55);
-        border-radius: 50%;
-        transition: opacity 0.25s ease, width 0.25s cubic-bezier(0.34, 1.56, 0.64, 1),
-            height 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), border-color 0.25s ease, background 0.25s ease;
+        width: 32px;
+        height: 32px;
+        border: 1.5px solid rgba(56, 189, 248, 0.45);
+        background: rgba(56, 189, 248, 0.02);
+        box-shadow: 0 0 15px rgba(56, 189, 248, 0.08);
+        transition: opacity 0.25s ease, width 0.28s cubic-bezier(0.25, 1, 0.5, 1),
+            height 0.28s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
     }
 
     .cursor-dot.active,
@@ -2921,54 +2925,28 @@ body::after {
         opacity: 1;
     }
 
-    .cursor-tick {
-        position: absolute;
-        background: rgba(56, 189, 248, 0.6);
-    }
-
-    .tick-t, .tick-b {
-        left: 50%;
-        width: 1.5px;
-        height: 5px;
-        transform: translateX(-50%);
-    }
-
-    .tick-t { top: -8px; }
-    .tick-b { bottom: -8px; }
-
-    .tick-l, .tick-r {
-        top: 50%;
-        width: 5px;
-        height: 1.5px;
-        transform: translateY(-50%);
-    }
-
-    .tick-l { left: -8px; }
-    .tick-r { right: -8px; }
-
-    /* Hover state over interactive elements */
+    /* Hover state over links, cards, tabs, and buttons */
     .cursor-ring.cursor-hover {
-        width: 54px;
-        height: 54px;
-        border-color: var(--accent-emerald);
-        background: rgba(249, 115, 22, 0.08);
-    }
-
-    .cursor-ring.cursor-hover .cursor-tick {
-        background: var(--accent-emerald);
+        width: 48px;
+        height: 48px;
+        border-color: rgba(56, 189, 248, 0.85);
+        background: rgba(56, 189, 248, 0.12);
+        box-shadow: 0 0 25px rgba(56, 189, 248, 0.25);
     }
 
     .cursor-dot.cursor-hover {
         width: 4px;
         height: 4px;
-        background: var(--accent-emerald);
-        box-shadow: 0 0 8px var(--accent-emerald), 0 0 16px rgba(249, 115, 22, 0.5);
+        background: #ffffff;
+        box-shadow: 0 0 12px rgba(255, 255, 255, 0.85);
     }
 
-    /* Click pulse */
+    /* Crisp click feedback */
     .cursor-ring.cursor-click {
-        width: 26px;
-        height: 26px;
+        width: 24px;
+        height: 24px;
+        border-color: #38bdf8;
+        background: rgba(56, 189, 248, 0.25);
     }
 }
 
@@ -3989,4 +3967,201 @@ body::after {
         flex-direction: column;
         align-items: flex-start;
     }
+}
+
+
+/* ===== MODAL GITHUB VIEW TAB STYLES ===== */
+.p-github-card {
+    background: #090e15;
+    border: 1px solid var(--border-glass);
+    border-radius: var(--radius-md);
+    padding: 1.6rem;
+}
+
+.p-github-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding-bottom: 1.2rem;
+    border-bottom: 1px solid var(--border-glass);
+    margin-bottom: 1.4rem;
+}
+
+.p-github-title-wrap {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.p-github-main-icon {
+    font-size: 2.2rem;
+    color: var(--text-primary);
+}
+
+.p-github-repo-title {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    margin-bottom: 0.25rem;
+}
+
+.p-github-repo-title a {
+    color: var(--accent-primary);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    transition: var(--transition-base);
+}
+
+.p-github-repo-title a:hover {
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
+}
+
+.p-github-desc {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.p-github-badges {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.p-gh-badge {
+    padding: 0.25rem 0.6rem;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--border-glass);
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+/* Clone Box */
+.p-clone-box {
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(56, 189, 248, 0.25);
+    border-radius: var(--radius-sm);
+    padding: 0.85rem 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.p-clone-label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    font-family: var(--font-display);
+    margin-bottom: 0.4rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.p-clone-input-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    background: rgba(10, 14, 20, 0.8);
+    border: 1px solid var(--border-glass);
+    padding: 0.5rem 0.75rem;
+    border-radius: var(--radius-sm);
+}
+
+.p-clone-input-wrap code {
+    font-family: var(--font-display);
+    font-size: 0.82rem;
+    color: #38bdf8;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.btn-copy-clone {
+    background: rgba(56, 189, 248, 0.15);
+    border: 1px solid rgba(56, 189, 248, 0.35);
+    color: var(--accent-primary);
+    padding: 0.3rem 0.75rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.75rem;
+    font-weight: 600;
+    font-family: var(--font-display);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    transition: all var(--transition-base);
+    flex-shrink: 0;
+}
+
+.btn-copy-clone:hover {
+    background: var(--accent-primary);
+    color: #000000;
+}
+
+.btn-copy-clone.copied {
+    background: rgba(34, 197, 94, 0.2);
+    border-color: #22c55e;
+    color: #4ade80;
+}
+
+/* File Tree */
+.p-repo-filetree {
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid var(--border-glass);
+    border-radius: var(--radius-sm);
+    padding: 1rem 1.2rem;
+    font-family: var(--font-display);
+    font-size: 0.82rem;
+    line-height: 1.9;
+    margin-bottom: 1.8rem;
+}
+
+.tree-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.tree-sub {
+    padding-left: 1.5rem;
+}
+
+.tree-item a {
+    color: #e2e8f0;
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+.tree-item a:hover {
+    color: var(--accent-primary);
+    text-decoration: underline;
+}
+
+.tree-desc,
+.tree-comment {
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    margin-left: 0.4rem;
+}
+
+.text-amber { color: #fbbf24; }
+.text-blue { color: #38bdf8; }
+.text-yellow { color: #eab308; }
+.text-emerald { color: #34d399; }
+.text-red { color: #f87171; }
+.text-cyan { color: #22d3ee; }
+.text-muted { color: var(--text-muted); }
+
+/* GitHub Tab Action Buttons */
+.p-github-actions {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
 }

@@ -44,13 +44,8 @@
         </div>
     </nav>
 
-    <!-- ===== CUSTOM HUD CURSOR ===== -->
-    <div class="cursor-ring" id="cursorRing">
-        <span class="cursor-tick tick-t"></span>
-        <span class="cursor-tick tick-r"></span>
-        <span class="cursor-tick tick-b"></span>
-        <span class="cursor-tick tick-l"></span>
-    </div>
+    <!-- ===== CUSTOM PROFESSIONAL CURSOR ===== -->
+    <div class="cursor-ring" id="cursorRing"></div>
     <div class="cursor-dot" id="cursorDot"></div>
 
     <!-- ===== HERO / COVER SECTION ===== -->
@@ -1015,6 +1010,9 @@
                 <button class="p-tab" data-tab="tab-app" role="tab" aria-selected="false">
                     <i class="fas fa-desktop"></i> Dashboard &amp; Downloads
                 </button>
+                <button class="p-tab" data-tab="tab-github" role="tab" aria-selected="false">
+                    <i class="fab fa-github"></i> GitHub View
+                </button>
             </div>
 
             <!-- Tab 1: Architecture & Overview -->
@@ -1509,6 +1507,72 @@
                                 <i class="fab fa-github"></i> View Repository
                             </a>
                         </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab 6: GitHub View -->
+            <div class="p-tab-pane" id="tab-github" role="tabpanel">
+                <div class="p-github-card">
+                    <div class="p-github-header">
+                        <div class="p-github-title-wrap">
+                            <i class="fab fa-github p-github-main-icon"></i>
+                            <div>
+                                <h3 class="p-github-repo-title">
+                                    <a href="https://github.com/ThathsaraNilnayana/neural_network_project" target="_blank">
+                                        ThathsaraNilnayana / neural_network_project <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                </h3>
+                                <p class="p-github-desc">Feedforward Neural Network &amp; Interactive Learning Lab with R Shiny, Plotly &amp; SGD</p>
+                            </div>
+                        </div>
+                        <div class="p-github-badges">
+                            <span class="p-gh-badge"><i class="fas fa-code-branch"></i> main</span>
+                            <span class="p-gh-badge"><i class="fas fa-circle" style="color: #22c55e;"></i> Public</span>
+                            <span class="p-gh-badge"><i class="fab fa-r-project"></i> R &amp; Python</span>
+                        </div>
+                    </div>
+
+                    <!-- Git Clone Box -->
+                    <div class="p-clone-box">
+                        <div class="p-clone-label"><i class="fas fa-terminal"></i> Clone with HTTPS:</div>
+                        <div class="p-clone-input-wrap">
+                            <code id="cloneCmd">git clone https://github.com/ThathsaraNilnayana/neural_network_project.git</code>
+                            <button type="button" class="btn-copy-clone" id="btnCopyClone" aria-label="Copy clone command">
+                                <i class="fas fa-copy"></i> <span>Copy</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Repository File Explorer -->
+                    <div class="p-section-heading" style="margin-top: 1.8rem;">
+                        <h3><i class="fas fa-folder-tree"></i> Repository File Structure</h3>
+                        <p>Browse key files and modules available in the repository:</p>
+                    </div>
+
+                    <div class="p-repo-filetree">
+                        <div class="tree-item tree-dir"><i class="fas fa-folder-open text-amber"></i> <strong>App_5922/</strong> <span class="tree-comment">&mdash; Application source files</span></div>
+                        <div class="tree-item tree-file tree-sub"><i class="fab fa-r-project text-blue"></i> <a href="https://github.com/ThathsaraNilnayana/neural_network_project/blob/main/App_5922/app.R" target="_blank">app.R</a> <span class="tree-desc">Complete interactive R Shiny dashboard with Plotly network &amp; real-time sliders</span></div>
+                        <div class="tree-item tree-file tree-sub"><i class="fab fa-python text-yellow"></i> <a href="https://github.com/ThathsaraNilnayana/neural_network_project" target="_blank">build_report_pdf.py</a> <span class="tree-desc">Automated report typesetting and artifact build script</span></div>
+                        
+                        <div class="tree-item tree-dir"><i class="fas fa-folder-open text-amber"></i> <strong>figurs &amp; Document file_5922/</strong> <span class="tree-comment">&mdash; Experimental scripts &amp; outputs</span></div>
+                        <div class="tree-item tree-file tree-sub"><i class="fab fa-r-project text-blue"></i> <a href="https://github.com/ThathsaraNilnayana/neural_network_project" target="_blank">neural_network_lab.R</a> <span class="tree-desc">Mathematical forward propagation, SGD optimization &amp; test routines</span></div>
+                        <div class="tree-item tree-file tree-sub"><i class="fab fa-r-project text-blue"></i> <a href="https://github.com/ThathsaraNilnayana/neural_network_project" target="_blank">generate_figures.R</a> <span class="tree-desc">High-resolution visualization generation script</span></div>
+                        <div class="tree-item tree-file tree-sub"><i class="fas fa-table text-emerald"></i> <a href="https://github.com/ThathsaraNilnayana/neural_network_project" target="_blank">experiment_results.csv</a> <span class="tree-desc">Recorded metrics for all 8 controlled experiment configurations</span></div>
+                        
+                        <div class="tree-item tree-file"><i class="fas fa-file-pdf text-red"></i> <a href="https://github.com/ThathsaraNilnayana/neural_network_project" target="_blank">Report_5922.pdf</a> <span class="tree-desc">Official 3-page scientific report (100/100 marks)</span></div>
+                        <div class="tree-item tree-file"><i class="fas fa-database text-cyan"></i> <a href="https://github.com/ThathsaraNilnayana/neural_network_project/blob/main/sensor_dataset.csv" target="_blank">sensor_dataset.csv</a> <span class="tree-desc">180 machine observations with temperature, vibration &amp; pressure telemetry</span></div>
+                        <div class="tree-item tree-file"><i class="fas fa-file-alt text-muted"></i> <a href="https://github.com/ThathsaraNilnayana/neural_network_project#readme" target="_blank">README.md</a> <span class="tree-desc">Project overview, installation guide &amp; theoretical proofs</span></div>
+                    </div>
+
+                    <!-- Primary Actions -->
+                    <div class="p-github-actions">
+                        <a href="https://github.com/ThathsaraNilnayana/neural_network_project" target="_blank" class="btn btn-primary">
+                            <i class="fab fa-github"></i> Open Repository on GitHub
+                        </a>
+                        <a href="https://github.com/ThathsaraNilnayana/neural_network_project/archive/refs/heads/main.zip" target="_blank" class="btn btn-outline">
+                            <i class="fas fa-download"></i> Download Repository (.zip)
+                        </a>
                     </div>
                 </div>
             </div>
