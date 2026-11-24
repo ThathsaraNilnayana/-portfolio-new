@@ -1536,6 +1536,19 @@ ul {
     display: flex;
     align-items: center;
     gap: 0.8rem;
+    flex-wrap: wrap;
+}
+
+.project-inline-link {
+    color: var(--accent-primary);
+    text-decoration: underline;
+    font-weight: 500;
+    transition: var(--transition-fast);
+}
+
+.project-inline-link:hover {
+    color: #ffffff;
+    text-shadow: 0 0 8px rgba(56, 189, 248, 0.5);
 }
 
 .project-team {
