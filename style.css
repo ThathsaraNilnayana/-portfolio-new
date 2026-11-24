@@ -3896,6 +3896,18 @@ body::after {
     color: var(--accent-emerald);
 }
 
+.p-dl-icon.purple {
+    background: rgba(168, 85, 247, 0.12);
+    border: 1px solid rgba(168, 85, 247, 0.3);
+    color: #c084fc;
+}
+
+.p-footer-action {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
 .p-dl-info h4 {
     font-size: 0.95rem;
     font-weight: 700;
